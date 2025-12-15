@@ -9,7 +9,6 @@ def search_books():
     while True:
         author = input("Enter the author's name: ")
         
-        # Check if the book exists in the dictionary
         if author in books:
             book_name = list(books.keys())[list(books.values()).index(author)]
             
@@ -26,7 +25,6 @@ def search_authors():
     while True:
         author = input("Enter the author's name: ")
         
-        # Check if the author exists in the dictionary
         if author in books:
             print(f"Author '{author}' found!")
         else:
