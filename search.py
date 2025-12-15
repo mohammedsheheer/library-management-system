@@ -1,20 +1,40 @@
-books = {"1984": "George Orwell", "The Shining" : "Stephen King", "Emma" : "Jane Austen"}
-while True:
-    print("1. Search book\n2. Search author\n3. Exit\n")
-    n = input("Enter your choice: ")
-    if(n==1):
-        book = input("Enter book name: ")
-        if(book in books.keys):
-            print("Book Found!")
-            print(f"{book} by {books[book]}")
+books = {
+    "To Kill a Mockingbird": "Harper Lee",
+    "1984": "George Orwell",
+    "The Great Gatsby": "F. Scott Fitzgerald",
+}
+
+def search_books():
+    print("Search for books:")
+    while True:
+        author = input("Enter the author's name: ")
+        
+        # Check if the book exists in the dictionary
+        if author in books:
+            book_name = list(books.keys())[list(books.values()).index(author)]
+            
+            print(f"Book '{book_name}' by {author} found!")
         else:
-            print("Book not found!")
-    if(n==2):
-        author = input("Enter author name: ")
-        if(author in books.items):
-            print("Author Found!")
-            print(f"{book} by {books[book]}")
+            print(f"No book found with the name '{author}'.")
+        
+        again = input("Do you want to search another book? (yes/no): ")
+        if again.lower() != "yes":
+            break
+
+def search_authors():
+    print("Search for authors:")
+    while True:
+        author = input("Enter the author's name: ")
+        
+        # Check if the author exists in the dictionary
+        if author in books:
+            print(f"Author '{author}' found!")
         else:
-            print("Author not found!")
-    if(n==3):
-        break
+            print(f"No author found with the name '{author}'.")
+        
+        again = input("Do you want to search another author? (yes/no): ")
+        if again.lower() != "yes":
+            break
+
+search_books()
+search_authors()
