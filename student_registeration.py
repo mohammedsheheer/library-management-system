@@ -1,4 +1,4 @@
-print("Library Management App")
+print("Library Management App\nWelcome")
 
 #get credentials
 name = input("Enter your name: ")
